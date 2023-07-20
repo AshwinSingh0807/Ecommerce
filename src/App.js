@@ -1,5 +1,3 @@
-import './App.css';
-
 function App() {
   return (
       <div class="mt-10 ml-24 mr-24">
@@ -36,10 +34,6 @@ function App() {
                 </div>
                 {/* <!-- cart --> */}
                 <img class="w-6 h-6" src="https://toppng.com/uploads/preview/shopping-cart-png-image-shopping-cart-icon-sv-11562865326ta92uix1ak.png" alt=" not available"></img>
-                <div>
-                    {/* <!-- icons --> */}
-
-                </div>
             </div>
         </div> 
     
