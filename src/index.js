@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
-// import ProductList from './ProductList';
+import ProductDetails from './ProductDetails';
+import App from './App';
+import ProductList from './ProductList';
 import Checkout from './Checkout';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Checkout />
+    <ProductDetails />
   </React.StrictMode>
 );
 
