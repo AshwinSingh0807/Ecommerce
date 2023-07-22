@@ -76,7 +76,7 @@ const Checkout = () => {
               {/* right side of checkout box */}
               <div className="flex justify-between">
                 {/* increment button */}
-                <div className="flex border h-6 border-black justify-center align-middle">
+                <div className="flex border h-6 border-black justify-center items-center">
                   <button className="text-sm w-6 h-6" type="submit">
                     -
                   </button>
