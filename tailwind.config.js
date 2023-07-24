@@ -1,26 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
     screens: {
-      'sm': '640px',
-      // => @media (min-width: 640px) { ... }
+   '2xl': {'max': '1535px'},
+      // => @media (max-width: 1535px) { ... }
 
-      'md': '768px',
-      // => @media (min-width: 768px) { ... }
+      'xl': {'max': '1279px'},
+      // => @media (max-width: 1279px) { ... }1023-1279
 
-      'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
+      'lg': {'max': '1023px'},
+      // => @media (max-width: 1023px) { ... }767-1022
 
-      'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
+      // 'md': {'max': '767px'},
+      // // => @media (max-width: 767px) { ... }639-766
 
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
-    }
+      'sm': {'max': '767px'},
+      // => @media (max-width: 639px) { ... }0-638
+    },
   },
   plugins: [],
-}
+};
