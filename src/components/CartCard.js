@@ -11,7 +11,7 @@ const CartCard = () => {
         alt="not found"
       ></img>
       <div className="flex flex-col ml-3">
-        <p className="text-base mb-2 sm:mr-1">I'm a product</p>
+        <p className="text-base mb-2 mr-4 sm:mr-1">I'm a product</p>
         <p className="text-sm font-semibold">$31.00</p>
         <p className="text-xs font-semibold text-gray-400">
           Size: Medium
