@@ -4,8 +4,12 @@ import ProductDetailCard from "./components/ProductDetailCard";
 import Socials from "./components/Socials";
 import Footer from "./components/Footer";
 import RelatedProducts from "./components/RelatedProducts";
+import { useLocation } from "react-router-dom";
 
 const ProductDetails = () => {
+  const location = useLocation();
+  const {data} = location.state || {};
+  console.log({data});
   return (
     <div className="mt-10 ml-24 mr-24 xl:mt-8 lg:mt-8 lg:ml-2 lg:mr-2 sm:mt-1 sm:ml-0 sm:mr-0">
       
@@ -24,7 +28,7 @@ const ProductDetails = () => {
       <div className="flex justify-center">
 
         {/* Product Detail Card */}
-        <ProductDetailCard LetsChat={true} />
+        <ProductDetailCard LetsChat={true}  />
         
 
         {/* Socials */}

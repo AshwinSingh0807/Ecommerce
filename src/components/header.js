@@ -1,16 +1,21 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+// import { CartContext } from "../utils/CartContext";
 const Header = ({ showCart }) => {
+  // const { cartState, dispatch } = useContext(CartContext);
+
   return (
     <div className="flex items-center">
       {/* <!-- left icons -->
         <!-- logo --> */}
       <div className="flex items-center p-2 bg-black h-8 sm:p-1 sm:h-6">
-        <img
-          className="w-12 h-4 sm:w-10 sm:h-3"
-          src="https://www.impromelbourne.com.au/assets/img/2018/2018%20Corporate/logos/nous.png"
-          alt="file not uploaded"
-        ></img>
+        <Link to="/">
+          <img
+            className="w-12 h-4 sm:w-10 sm:h-3"
+            src="https://www.impromelbourne.com.au/assets/img/2018/2018%20Corporate/logos/nous.png"
+            alt="file not uploaded"
+          ></img>
+        </Link>
       </div>
       {/* <!-- search --> */}
       <div className="flex items-center  ">
@@ -30,10 +35,18 @@ const Header = ({ showCart }) => {
         <div className="sm:hidden">
           {/* <!-- list --> */}
           <ul className="flex items-center mr-4  lg:mr-1">
-            <li className="mr-4 lg:mr-3 ">Shop All</li>
-            <li className="mr-4 lg:mr-3 ">Women</li>
-            <li className="mr-4 lg:mr-3 ">Men</li>
-            <li className="mr-4 lg:mr-3 ">Sale</li>
+            <Link to="/ProductList">
+              <li className="mr-4 lg:mr-3 ">Shop All</li>
+            </Link>
+            <Link to="/ProductList">
+              <li className="mr-4 lg:mr-3 ">Women</li>
+            </Link>
+            <Link to="/ProductList">
+              <li className="mr-4 lg:mr-3 ">Men</li>
+            </Link>
+            <Link to="/ProductList">
+              <li className="mr-4 lg:mr-3 ">Sale</li>
+            </Link>
             <li className="mr-4 lg:mr-3 ">About</li>
             {showCart && (
               <div className="w-64 h-[550px]  relative top-64 sm:hidden">
@@ -95,12 +108,14 @@ const Header = ({ showCart }) => {
                   <p className=" text-xl border-b-2 sm:text-sm border-gray-200 pb-2">
                     $90.00
                   </p>
-                  <button
-                    className="w-full text-sm border font-medium h-10 mt-4 p-2 bg-orange-500 text-gray-100"
-                    type="button"
-                  >
-                    View Cart
-                  </button>
+                  <Link to={"/cart"}>
+                    <button
+                      className="w-full text-sm border font-medium h-10 mt-4 p-2 bg-orange-500 text-gray-100"
+                      type="button"
+                    >
+                      View Cart
+                    </button>
+                  </Link>
                 </div>
               </div>
             )}
@@ -110,22 +125,30 @@ const Header = ({ showCart }) => {
         {/* <!-- login --> */}
         {!showCart && (
           <div className="flex items-center">
-            <img
-              className="w-5 mr-2 lg:mr-1 sm:mr-1 sm:w-3"
-              src="https://as2.ftcdn.net/v2/jpg/04/92/10/53/1000_F_492105322_ipyji3NMgNKtu19bTxSeIco4aYkJCX0z.jpg"
-              alt="img not available"
-            ></img>
-            <li className="list-none mr-2 sm:mr-1 sm:text-xs">LogIn</li>
+            <Link to={"/login"}>
+              <img
+                className="w-5 mr-2 lg:mr-1 sm:mr-1 sm:w-3"
+                src="https://as2.ftcdn.net/v2/jpg/04/92/10/53/1000_F_492105322_ipyji3NMgNKtu19bTxSeIco4aYkJCX0z.jpg"
+                alt="img not available"
+              ></img>
+            </Link>
+            <Link to={"/login"}>
+              <li className="list-none mr-2 sm:mr-1 sm:text-xs">LogIn</li>
+            </Link>
           </div>
         )}
         {/* <!-- cart --> */}
         {!showCart && (
-          <img
-            className="w-6 h-6 lg:w-5 lg:mt-[2px] lg:h-5 sm:h-3 sm:w-3"
-            src="https://toppng.com/uploads/preview/shopping-cart-png-image-shopping-cart-icon-sv-11562865326ta92uix1ak.png"
-            alt=" not available"
-          ></img>
-        )}{" "}
+          <div>
+            <Link to={"/cart"}>
+              <img
+                className="w-6 h-6 lg:w-5 lg:mt-[2px] lg:h-5 sm:h-3 sm:w-3"
+                src="https://toppng.com/uploads/preview/shopping-cart-png-image-shopping-cart-icon-sv-11562865326ta92uix1ak.png"
+                alt=" not available"
+              ></img>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
